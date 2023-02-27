@@ -7,8 +7,8 @@ import java.util.stream.Stream;
 
 public class TwoStreams {
     public static <T> Stream<T> zip(Stream<T> first, Stream<T> second) {
-        List<T> firstList = first.toList();
-        List<T> secondList = second.toList();
+        List<T> firstList = first.collect(Collectors.toList());
+        List<T> secondList = second.collect(Collectors.toList());
 
         int min = Math.min(firstList.size(), secondList.size());
 
